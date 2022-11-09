@@ -1,0 +1,35 @@
+{% extends 'browser/base.html' %}
+
+{% block content %}
+
+    <!-- bloc-1 -->
+    <div class="bloc l-bloc bloc-fill-screen " id="bloc-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center col-md-7">
+                    <h1 class="mg-md text-center text-md-left">
+                        Ваша растительность в надежных руках
+                    </h1>
+                    <h3 class="mg-md float-none text-center text-md-left">
+                        У нас работают профессионалы
+                    </h3>
+                    <div class="text-center text-lg-left text-md-left d-block">
+                        <a href="{% url 'barbers' %}" class="btn btn-lg btn-wire">Наши барберы</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container fill-bloc-bottom-edge">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <a href="#" data-scroll-speed="1000" onclick="scrollToTarget('0',this)"><span
+                                class="fa fa-angle-down icon-md animated bounce animDelay08"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bloc-1 END -->
+
+{% endblock %}

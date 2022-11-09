@@ -1,0 +1,44 @@
+{% extends 'browser/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- bloc-1 -->
+    <div class="bloc l-bloc" id="bloc-2">
+        <div class="container bloc-lg">
+            <div class="row">
+                <div class="col text-center">
+                    <h3 class="mg-md">
+                        Знакомьтесь<br>
+                    </h3>
+                    <p>
+                        Наши специалисты имеют бесценный опыт.
+                        Наши клиенты к нам возвращаются. Почти все.
+                    </p>
+                </div>
+            </div>
+            <div class="row voffset">
+                {% for b in barber %}
+                    <div class="col-lg-3 col-md-6 text-center">
+                        {% if b.photo %}
+                            <img src="{{ b.photo.url }}"
+                                 data-src="{{ b.photo.url }}"
+                                 class="img-fluid mx-auto d-block lazyload m-3" alt="placeholder user"/>
+                        {% endif %}
+                        <h3 class="mg-md">
+                            {{ b.barber_name }}
+                        </h3>
+                        <p>
+                            Всего клиентов: {{ b.clients_count }}
+                        </p>
+                        <div class="text-center text-lg-center text-md-left d-block">
+                            <a href="{{ b.get_absolute_url }}" class="btn btn-lg btn-wire m-3">Подробнее</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- bloc-1 END -->
+
+{% endblock %}

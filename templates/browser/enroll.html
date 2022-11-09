@@ -1,0 +1,33 @@
+{% extends 'browser/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="bloc l-bloc " id="bloc-4">
+        <div class="container bloc-lg">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3 col">
+                    <h2 class="mg-md text-center">
+                        Записаться к барберу
+                    </h2>
+                    <form action="{% url 'enroll' %}" method="post" class="mg-md text-center">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <p>Чтобы забронировать дату и время, нажмите кнопку:</p>
+                        <button id="button1" type="submit" class="btn btn-d btn-block btn-xl">Записаться</button>
+                        <p>
+                            <label for="localdate">Дата и время: </label>
+                            <input type="datetime-local" id="localdate" name="date"/>
+                        </p>
+
+                        <script>
+                            let button1 = document.getElementById("button1");
+                            button1.blur();
+
+
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
